@@ -123,7 +123,7 @@ export default function LinkInBio() {
           </p>
 
           <div className="flex gap-6 mt-8">
-            <a href="https://instagram.com/nellypimentelsm" target="_blank" rel="noreferrer" className="text-[#b18e72]/60 hover:text-[#b18e72] transition-colors duration-300">
+            <a href="https://instagram.com/nelly.socialmedia" target="_blank" rel="noreferrer" className="text-[#b18e72]/60 hover:text-[#b18e72] transition-colors duration-300">
               <InstagramIcon className="w-5 h-5" />
             </a>
           </div>

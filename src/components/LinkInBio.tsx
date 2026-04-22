@@ -105,8 +105,11 @@ export default function LinkInBio() {
         {/* Componente de Loop de Cards */}
         <section className="w-full flex flex-col gap-5">
           {cards.map((card, index) => (
-            <article 
+            <a 
               key={index} 
+              href="https://wa.me/5517996604166"
+              target="_blank"
+              rel="noreferrer"
               className="
                 group relative overflow-hidden rounded-[24px] w-full p-6 sm:p-10 
                 shadow-sm hover:shadow-xl transition-all duration-500 ease-out
@@ -130,14 +133,14 @@ export default function LinkInBio() {
                 <h2 className="text-[28px] sm:text-[34px] font-light mb-3 tracking-tight [text-shadow:_0_2px_10px_rgba(0,0,0,0.5)] leading-tight text-white">
                   {card.title}
                 </h2>
-                <p className="text-[13.5px] sm:text-[15.5px] leading-relaxed text-white/95 font-light [text-shadow:_0_1px_6px_rgba(0,0,0,0.5)]">
+                <div className="text-[13.5px] sm:text-[15.5px] leading-relaxed text-white/95 font-light [text-shadow:_0_1px_6px_rgba(0,0,0,0.5)]">
                   {card.description}
-                </p>
+                </div>
               </div>
 
               {/* Seta Hover Elegante Minimalista */}
               <ArrowRight className="absolute bottom-8 right-6 sm:bottom-10 sm:right-10 w-6 h-6 text-white opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 z-10 drop-shadow-md" />
-            </article>
+            </a>
           ))}
         </section>
       </main>
@@ -145,7 +148,7 @@ export default function LinkInBio() {
       {/* Floating CTA Button Fixo */}
       <div className="fixed bottom-8 left-0 right-0 flex justify-center px-6 z-50">
         <a 
-          href="https://wa.me/SEU_NUMERO_AQUI" 
+          href="https://wa.me/5517996604166" 
           target="_blank"
           rel="noreferrer"
           className="

@@ -22,6 +22,8 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 );
 
 export default function LinkInBio() {
+  const WHATSAPP_NUMBER = "5517996604166";
+
   const cards = [
     {
       title: "Consultoria",
@@ -32,6 +34,7 @@ export default function LinkInBio() {
         </>
       ),
       bgImage: "/1.jpeg",
+      link: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Oii, Nelly! Vim pelo link da bio e me interessei pela consultoria. Quero entender melhor como funciona e ver se faz sentido pra mim agora.")}`,
     },
     {
       title: "Mapa do Posicionamento",
@@ -42,6 +45,7 @@ export default function LinkInBio() {
         </>
       ),
       bgImage: "/2.jpeg",
+      link: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Oie, Nelly! Te achei pelo Instagram e quero saber mais sobre o Mapa do Posicionamento. Acho que é exatamente o que tô precisando nesse momento.")}`,
     },
     {
       title: "Planejamento Estratégico",
@@ -52,6 +56,7 @@ export default function LinkInBio() {
         </>
       ),
       bgImage: "/3.jpeg",
+      link: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Oii, Nelly! Vi o link da bio e me interessei pelo Planejamento Estratégico. Pode me contar mais sobre como funciona?")}`,
     },
     {
       title: "Gestão de Redes Sociais",
@@ -62,6 +67,7 @@ export default function LinkInBio() {
         </>
       ),
       bgImage: "/4.jpeg",
+      link: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Oie, Nelly! Vim pelo seu Instagram e quero entender melhor como funciona a gestão. Tô precisando de alguém pra cuidar disso com estratégia de verdade.")}`,
     },
   ];
 
@@ -117,7 +123,7 @@ export default function LinkInBio() {
           {cards.map((card, index) => (
             <a 
               key={index} 
-              href="https://wa.me/5517996604166"
+              href={card.link}
               target="_blank"
               rel="noreferrer"
               className={`
@@ -160,7 +166,7 @@ export default function LinkInBio() {
       {/* Floating CTA Button Fixo */}
       <div className="fixed bottom-8 left-0 right-0 flex justify-center px-6 z-50">
         <a 
-          href="https://wa.me/5517996604166" 
+          href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Oie, Nelly! Tô precisando de suporte, pode me ajudar?")}`} 
           target="_blank"
           rel="noreferrer"
           className="

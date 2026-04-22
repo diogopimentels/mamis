@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Instagram, Linkedin } from "lucide-react";
 
 /**
  * Ícone customizado do WhatsApp
@@ -66,7 +66,7 @@ export default function LinkInBio() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f1efea] flex flex-col items-center py-16 px-6 font-sans relative selection:bg-[#b18e72] selection:text-white pb-36">
+    <div className="min-h-screen bg-[#f1efea] flex flex-col items-center py-16 px-6 font-sans relative selection:bg-[#b18e72] selection:text-white pb-36 noise-overlay">
       
       {/* Background Decorativo (Sutil e luxuoso) */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
@@ -77,7 +77,7 @@ export default function LinkInBio() {
       <main className="w-full max-w-[440px] sm:max-w-[540px] md:max-w-[680px] flex flex-col items-center z-10">
         
         {/* Header Section */}
-        <header className="flex flex-col items-center mb-10 w-full">
+        <header className="flex flex-col items-center mb-10 w-full animate-in opacity-0">
           {/* Avatar com borda elegante */}
           <div className="relative w-28 h-28 mb-8">
             <div className="absolute inset-0 rounded-full border border-[#b18e72]/30 scale-110"></div>
@@ -100,6 +100,16 @@ export default function LinkInBio() {
           <p className="text-[11px] font-medium tracking-[0.25em] text-[#b18e72] uppercase">
             Estrategista Digital
           </p>
+
+          {/* Redes Sociais */}
+          <div className="flex gap-6 mt-8">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-[#b18e72]/60 hover:text-[#b18e72] transition-colors duration-300">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-[#b18e72]/60 hover:text-[#b18e72] transition-colors duration-300">
+              <Linkedin className="w-5 h-5" />
+            </a>
+          </div>
         </header>
 
         {/* Componente de Loop de Cards */}
@@ -110,12 +120,14 @@ export default function LinkInBio() {
               href="https://wa.me/5517996604166"
               target="_blank"
               rel="noreferrer"
-              className="
+              className={`
                 group relative overflow-hidden rounded-[24px] w-full p-6 sm:p-10 
                 shadow-sm hover:shadow-xl transition-all duration-500 ease-out
                 hover:-translate-y-1 cursor-pointer
                 text-white min-h-[320px] sm:min-h-[400px] flex flex-col justify-end
-              "
+                animate-in opacity-0
+              `}
+              style={{ animationDelay: `${(index + 2) * 0.1}s` }}
             >
               {/* Imagem de Fundo (Responsiva ao Hover) */}
               <div 

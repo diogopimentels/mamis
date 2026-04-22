@@ -40,25 +40,6 @@ const InstagramIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const LinkedinIcon = ({ className }: { className?: string }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="24" 
-    height="24" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-  >
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-    <rect width="4" height="12" x="2" y="9"/>
-    <circle cx="4" cy="4" r="2"/>
-  </svg>
-);
-
 export default function LinkInBio() {
   const WHATSAPP_NUMBER = "5517996604166";
 
@@ -110,22 +91,18 @@ export default function LinkInBio() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f1efea] flex flex-col items-center py-16 px-6 font-sans relative selection:bg-[#b18e72] selection:text-white pb-36 noise-overlay">
+    <div className="min-h-screen bg-[#fcfaf7] flex flex-col items-center py-12 px-6 font-sans relative selection:bg-[#b18e72] selection:text-white pb-36">
       
-      {/* Background Decorativo (Sutil e luxuoso) */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[60vw] max-w-[600px] h-[60vw] max-h-[600px] bg-[#e5d5c4]/30 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] max-w-[600px] h-[60vw] max-h-[600px] bg-[#b18e72]/20 rounded-full blur-[100px]"></div>
-      </div>
-
-      <main className="w-full max-w-[440px] sm:max-w-[540px] md:max-w-[680px] flex flex-col items-center z-10">
+      {/* Background Decorativo Removido para Limpeza Visual */}
+      
+      <main className="w-full max-w-[480px] flex flex-col items-center z-10">
         
         {/* Header Section */}
-        <header className="flex flex-col items-center mb-10 w-full animate-in opacity-0">
-          {/* Avatar com borda elegante */}
-          <div className="relative w-28 h-28 mb-8">
-            <div className="absolute inset-0 rounded-full border border-[#b18e72]/30 scale-110"></div>
-            <div className="w-full h-full rounded-full bg-[#fdfaf5] overflow-hidden flex items-center justify-center shadow-sm">
+        <header className="flex flex-col items-center mb-12 w-full">
+          {/* Avatar com borda elegante e simples */}
+          <div className="relative w-24 h-24 mb-6">
+            <div className="absolute inset-0 rounded-full border border-[#b18e72]/20 scale-110"></div>
+            <div className="w-full h-full rounded-full bg-white overflow-hidden flex items-center justify-center shadow-sm">
               <img 
                 src="/nelly.png" 
                 alt="Nelly Pimentel" 
@@ -145,19 +122,15 @@ export default function LinkInBio() {
             Estrategista Digital
           </p>
 
-          {/* Redes Sociais */}
           <div className="flex gap-6 mt-8">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-[#b18e72]/60 hover:text-[#b18e72] transition-colors duration-300">
+            <a href="https://instagram.com/nellypimentelsm" target="_blank" rel="noreferrer" className="text-[#b18e72]/60 hover:text-[#b18e72] transition-colors duration-300">
               <InstagramIcon className="w-5 h-5" />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-[#b18e72]/60 hover:text-[#b18e72] transition-colors duration-300">
-              <LinkedinIcon className="w-5 h-5" />
             </a>
           </div>
         </header>
 
-        {/* Componente de Loop de Cards */}
-        <section className="w-full flex flex-col gap-5">
+        {/* Componente de Lista de Cards (Design Limpo e Profissional) */}
+        <section className="w-full flex flex-col gap-4">
           {cards.map((card, index) => (
             <a 
               key={index} 
@@ -165,37 +138,30 @@ export default function LinkInBio() {
               target="_blank"
               rel="noreferrer"
               className={`
-                group relative overflow-hidden rounded-[24px] w-full p-6 sm:p-10 
-                shadow-sm hover:shadow-xl transition-all duration-500 ease-out
-                hover:-translate-y-1 cursor-pointer
-                text-white min-h-[320px] sm:min-h-[400px] flex flex-col justify-end
-                animate-in opacity-0
+                group relative overflow-hidden rounded-[20px] w-full 
+                bg-white border border-[#b18e72]/10
+                hover:border-[#b18e72]/30 transition-all duration-300
+                flex flex-col cursor-pointer
+                shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_20px_rgba(177,142,114,0.08)]
               `}
-              style={{ animationDelay: `${(index + 2) * 0.1}s` }}
             >
-              {/* Imagem de Fundo (Responsiva ao Hover) */}
+              {/* Imagem de Topo do Card (Fina e elegante) */}
               <div 
-                className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-1000 ease-out group-hover:scale-105"
+                className="w-full h-32 bg-cover bg-center grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
                 style={{ backgroundImage: `url(${card.bgImage})` }}
               ></div>
               
-              {/* Overlay Cinza Escuro/Chumbo: Expandido para Bottom alignment */}
-              <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#2c2c2e]/90 via-[#2c2c2e]/40 to-transparent"></div>
-              {/* Gradiente extra na base (subindo) garante leitura perfeita já que empurramos o texto para baixo */}
-              <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#2c2c2e]/80 via-[#2c2c2e]/10 to-transparent"></div>
-              
-              {/* Conteúdo alinhado à esquerda naturalmente, abrindo todo o lado direito e o topo para destacar a fotografia */}
-              <div className="relative z-10 w-[85%] sm:w-[70%] pr-2">
-                <h2 className="text-[28px] sm:text-[34px] font-light mb-3 tracking-tight [text-shadow:_0_2px_10px_rgba(0,0,0,0.5)] leading-tight text-white">
-                  {card.title}
-                </h2>
-                <div className="text-[13.5px] sm:text-[15.5px] leading-relaxed text-white/95 font-light [text-shadow:_0_1px_6px_rgba(0,0,0,0.5)]">
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-2">
+                  <h2 className="text-[20px] font-medium tracking-tight text-[#1a1a1a]">
+                    {card.title}
+                  </h2>
+                  <ArrowRight className="w-4 h-4 text-[#b18e72] opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-x-2 group-hover:translate-x-0" />
+                </div>
+                <div className="text-[14px] leading-relaxed text-[#4a4a4a] font-light">
                   {card.description}
                 </div>
               </div>
-
-              {/* Seta Hover Elegante Minimalista */}
-              <ArrowRight className="absolute bottom-8 right-6 sm:bottom-10 sm:right-10 w-6 h-6 text-white opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 z-10 drop-shadow-md" />
             </a>
           ))}
         </section>
@@ -212,18 +178,18 @@ export default function LinkInBio() {
             bg-[#b18e72] text-[#ffffff] 
             px-1 border border-white/10
             rounded-full pl-6 pr-2 py-2
-            shadow-[0_8px_30px_rgba(177,142,114,0.3)]
-            hover:shadow-[0_12px_45px_rgba(177,142,114,0.45)] hover:-translate-y-1 
+            shadow-[0_4px_20px_rgba(177,142,114,0.15)]
+            hover:shadow-[0_8px_30px_rgba(177,142,114,0.25)] hover:-translate-y-1 
             transition-all duration-500 ease-out
-            w-full max-w-[340px] backdrop-blur-md
+            w-full max-w-[320px] backdrop-blur-sm
           "
         >
           <div className="flex items-center gap-3">
             <WhatsAppIcon className="w-5 h-5" />
-            <span className="font-medium tracking-wide text-[15px] pb-1 pt-1 opacity-95">Meu suporte</span>
+            <span className="font-medium tracking-wide text-[14px] opacity-95">Meu suporte</span>
           </div>
-          <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-             <ArrowRight className="w-4 h-4" />
+          <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+             <ArrowRight className="w-3.5 h-3.5" />
           </div>
         </a>
       </div>
